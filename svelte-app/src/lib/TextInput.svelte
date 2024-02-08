@@ -14,13 +14,13 @@
 </script>
 
 <div>
-  <div>
+  <div class="my-2">
     <button class="phase1" on:click={selectUploadType}> written text </button>
   </div>
 </div>
 
 <style>
-  div {
-    margin: 0.5rem;
-  }
+button {
+  width: 100%;
+}
 </style>

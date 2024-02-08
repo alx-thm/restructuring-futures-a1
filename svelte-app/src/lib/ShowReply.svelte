@@ -126,7 +126,7 @@
         padding-left:1rem;
         padding-top: 0.5rem;   
         padding-bottom: 0.5rem;
-        margin-left:1.5rem;
+        margin-left:1rem;
         position: relative;
         overflow: hidden;
         white-space: nowrap;

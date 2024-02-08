@@ -234,8 +234,7 @@
 
 <style>
   input {
-    font-family: Gap_sansregular, Impact, Haettenschweiler, "Arial Narrow Bold",
-      sans-serif;
+    font-family: var(--font-family);
     line-height: 1;
     font-size: var(--font-size-lg);
   }

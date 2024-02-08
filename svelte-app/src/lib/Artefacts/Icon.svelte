@@ -132,7 +132,9 @@
     transform: scale(1.25);
     background: #FFF;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    border-bottom: 0.25rem solid #00495A;
+    /*border-bottom: 0.25rem solid var(--color-border);*/
+      box-shadow: 0px 5px 10px -1px rgba(0,0,0,0.3);
+
   }
 
 

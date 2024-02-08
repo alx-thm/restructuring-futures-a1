@@ -99,7 +99,7 @@
             {/if}
         </div>
             <div class='flex flex-row items-end'>
-            <div class="mt-4 mx-2">
+            <div class="mt-4 mr-2">
                 <CreateInvitation shareAddress={share} />
             </div>
             <div class="mt-4 mx-2">
@@ -141,28 +141,4 @@ hr.divider {
     border-top: 1px solid black;
 }
 
-.tooltip {
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden; /* Initial state, will be overridden by reactive variable */
-  width: 120px;
-  background-color: var(--dark-text-red);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  top: 110%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.tooltip .tooltiptext.visible {
-    visibility: visible;
-    opacity: 1;
-}
 </style>

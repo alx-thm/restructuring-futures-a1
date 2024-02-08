@@ -404,19 +404,19 @@ $: {
 <div class="the-scroll flex flex-row sm:flex-col min-h-screen overflow-y-auto">
   <div class='sm:w-1/5 flex flex-col side-bar fixed '>
   <button class="ml-6 mt-4 mb-2 h-auto mr-1" on:click={toggleDetails}>
-    🔮 app customization
+    Settings
   </button>
-  <p class='ml-6 text-2xl text-left'><b>
-    current alias:
+  <p class='ml-6 text-2xl text-center'><b>
+    Alias:
   </b>{alias.length > 0 ? alias : 'none'}
 </p>
 
   <div
-    class="ml-6 mx-1 sm:mt-4 flex flex-row justify-between sm:flex-col p-8 h-auto sm:h-[80vh] z-50 customBorder"
+    class="ml-6 mx-1 sm:mt-4 flex flex-row justify-between sm:flex-col p-6 h-auto sm:h-[80vh] z-50 customBorder"
     style="
     {isCommons ? `background-color: ${currentColor};` : `background-color: white;`}
     transition: background-color 1s ease;
-    {isCommons ? `color: #71302B;` : `color: black;`}; 
+    {isCommons ? `color: var(--color-text-dark);` : `color: black;`}; 
     "
   >
   {#if selectedDocument}
@@ -445,10 +445,10 @@ $: {
   </div>
     <div class="flex flex-col justify-left">
       {#if isCommons}
-       <p class='text-left'><b>Phase of decay:</b> {PHASE_NAME[sectionIndex]}</p>
-       <p class='text-left'><b>Number of artefacts in this phase:</b> {artefactsInCurrentPhase}</p>
+       <p class='text-left mb-2'><b>Phase of decay:</b> {PHASE_NAME[sectionIndex]}</p>
+       <p class='text-left mb-2'><b>Number of artefacts in this phase:</b> {artefactsInCurrentPhase}</p>
       {/if}
-  <p class='text-left'><b>Number of artefacts in the {sharePart}:</b> {documents.length}</p>
+  <p class='text-left mb-2'><b>Number of artefacts in the {sharePart}:</b> {documents.length}</p>
   </div>
 </div>
 <div class='flex flex-col w-full'>
@@ -499,7 +499,7 @@ $: {
   
     </div>
   </div>
-  <div class="w-4/5 mt-16 sm:mt-4 sm:ml-[20vw]">
+  <div class="w-4/5 mt-16 sm:mt-10 sm:ml-[20vw]">
     <div class="my-grid-container-wrapper w-auto pl-4 ml-4">
       {#if showPlace}
       <PlaceFromStudio {windowWidth} on:hideWindow={resetView} on:artefactPlaced={fetchDocs}/>
@@ -528,7 +528,7 @@ $: {
         />
         </div>
       {/if}
-      <div class="flex flex-col w-auto mt-6">
+      <div class="flex flex-col w-auto mt-0">
         {#if documents.length === 0}
           <div
             class="flex flex-col items-center justify-center align-middle h-[60vh]"
@@ -700,20 +700,20 @@ $: {
 
 <style>
   .customBorder {
-    border: 1px solid #71302B; 
+    border: 1px solid var(--color-border); 
   }
   .commons-border {
-    border-left: 1px solid #71302B; 
-    border-right: 1px solid #71302B;
+    border-left: 1px solid var(--color-border); 
+    border-right: 1px solid var(--color-border);
   }
   .bottom-border {
-    border-bottom: 1px solid #71302B;
+    border-bottom: 1px solid var(--color-border);
   }
   .top-border {
-    border-top: 1px solid #71302B;
+    border-top: 1px solid var(--color-border);
   }
   .borderstudio {
-    border: 1px solid rgba(128, 128, 128, 0.35); 
+    border: 1px solid var(--color-border); 
   }
 
   .orbit-icon-container {
@@ -768,6 +768,7 @@ line-height: 1.75rem;
     top: 0;
     font-size: 1.25rem;
     line-height: 1.75rem;
+    z-index: 100;
   }
 
   .my-grid-container-wrapper {
@@ -776,7 +777,7 @@ line-height: 1.75rem;
   }
 
   .artefact-overlay {
-    width: stretch;
+    width: 75vw;
     top: 0.5rem;
     z-index: 5;
     display: flex;
@@ -786,5 +787,13 @@ line-height: 1.75rem;
   }
   .studio-grid {
     grid-gap: 2px;
+  }
+
+  .font-bold {
+    font-family: var(--font-family);
+    font-weight: 700;
+  }
+  .font-bold p {
+    font-weight: 400 !important;
   }
 </style>

@@ -22,16 +22,16 @@
 <div class="the-scroll flex flex-col sm:flex-row min-h-screen overflow-y-auto">
   <div class="sm:w-1/5 flex flex-col fixed">
     <button
-      class="ml-6 mt-4 mb-2 h-auto mr-1 border-black"
+      class="ml-6 mt-4 mb-2 h-auto mr-1"
       on:click={toggleDetails}
     >
-      🔮 exit app customization
+      Exit Settings
     </button>
     <p class="ml-6 text-2xl text-left">
-      <b> current alias: </b>{$authorKeypair.address.slice(0, 5)}
+      <b>Alias: </b>{$authorKeypair.address.slice(0, 5)}
     </p>
     <div
-      class="paper-yellow customBorder ml-6 mx-1 sm:mt-4 flex flex-row sm:flex-col p-8 h-auto sm:h-[80vh] z-50 customBorder"
+      class="paper-yellow customBorder ml-6 mx-1 sm:mt-4 flex flex-row sm:flex-col p-6 h-auto sm:h-[80vh] z-50 customBorder"
     >
       <button
         class:phase2={activeComponent === "workspace"}
@@ -51,7 +51,7 @@
       >
     </div>
   </div>
-  <div class="w-full sm:w-[80vw] mt-16 sm:mt-10 sm:ml-[25vw]">
+  <div class="w-full sm:w-[80vw] mt-6 sm:mt-4 sm:ml-[25vw]">
     {#if activeComponent === "workspace"}
       <Workspace on:shareUpdated />
     {/if}
@@ -68,6 +68,6 @@
 </div>
 <style>
    .customBorder {
-    border: 1px solid #71302B; 
+    border: 1px solid var(--color-border); 
   }
 </style>

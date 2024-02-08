@@ -101,7 +101,7 @@
     $: console.log("filetype in Upload.svelte", filetype);
 </script>
 
-<div style="position:fixed; width: 79vw;">
+<div class="overlay" style="position:fixed; width: 75vw">
     <div style="position: relative; z-index:52;">
         <div class="h-[80vh] w-full">
             <div class="p-6 w-full h-full bg-white">
@@ -185,8 +185,7 @@
         min-height: 40vh;
         height: auto;
         font-size: 1;
-        font-family: "brandon-grotesque", "Gill Sans", "Gill Sans MT", Calibri,
-            "Trebuchet MS", sans-serif;
+        font-family: inherit;
     }
     button:disabled {
         background-color: #ccc;

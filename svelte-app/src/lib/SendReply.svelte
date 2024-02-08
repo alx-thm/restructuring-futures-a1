@@ -109,7 +109,7 @@
 
 <div>
     <div class='flex flex-row'>
-        <button class='mb-2 mx-2 phase1'
+        <button class='mb-2 mr-2 phase1'
             on:click={txtReply}>
             text reply
         </button>

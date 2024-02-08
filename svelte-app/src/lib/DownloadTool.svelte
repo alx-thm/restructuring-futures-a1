@@ -129,7 +129,7 @@
 </script>
 {#if !isHidden}
     <div class="{!isStudio ? 'phase1' : ''} flex flex-col-reverse">
-        <Tooltip text='backing up {isStudio ? 'your studio' : 'the commons'} by downloading a zip file'>
+        <Tooltip text='Back up {isStudio ? 'your studio' : 'the commons'} by downloading a zip file'>
             <button class='w-full' on:click={createArchive}>{!isStudio ?  'Create Archive' : 'backup this studio'}</button>
         </Tooltip>
         {#if counter > 0}

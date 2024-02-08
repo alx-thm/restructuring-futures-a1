@@ -12,7 +12,7 @@
         
 {#if showDetails}
 <div class='w-auto'>
-    <h5 class='mx-4 px-8 text-left'>Artefact: {title}</h5>
+    <h5 class='px-8 text-left'>Artefact: {title}</h5>
     <div class='replies'>
             <ShowReply {doc} on:success />
     </div>
@@ -25,8 +25,8 @@
 <style>
 
 h5 {
-    border: 1px solid #71302B;
-background: #FFF5D9; 
+    border: 1px solid var(--color-border);
+background: var(--paper-yellow); 
 padding:0.5rem;
 }
  .replies {

@@ -84,11 +84,11 @@
 <div style="position: relative; z-index:52;">
 {#if fileSelection}
   <div class="modal pb-6 " style={modalStyle}>
-    <div class="mt-6 brown text-left px-6">What artefact would you like to create? 
+    <div class="mt-6 text-left px-6">What artefact would you like to create? 
       <br>
       {mapNumberToLetter(start[1])}, {start[0] + 1}</div>
 
-    <div class="flex-col">
+    <div class="flex-col mx-6">
       <TextInput xy={start} on:selected/>
       <FileSharing xy={start} on:selected />
       <Voice xy={start} on:selected/>
@@ -170,11 +170,11 @@ then location on map</h4>
   }
 
   .container div:hover:not(.occupied) {
-      background: #fff5d9;
+      background: var(--paper-yellow);
   }
 
   .container div.active {
-    background: #e15f55;
+    background: var(--vivid-red);
   }
 
   .container div.occupied {
@@ -205,19 +205,17 @@ then location on map</h4>
     position: absolute;
     width: 200px;
     background-color: #fff; 
-    border: 1px solid #71302B;
+    border: 1px solid var(--color-border);
     z-index:99;
   }
-  .brown {
-    color: #71302B;
-  }
+
   .background-white {
     background-color: #fff;
   }
 
   .inline-dropdown select {
   background: transparent;
-  border: 1px solid #71302B;
+  border: 1px solid var(--color-border);
   padding:0.5rem 1rem;
   line-height: inherit;
   outline: none;
@@ -229,6 +227,10 @@ then location on map</h4>
 
 .inline-dropdown select:hover, .inline-dropdown select:focus {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+button {
+  width: 100%;
 }
 
 </style>

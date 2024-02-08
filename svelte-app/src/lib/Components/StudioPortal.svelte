@@ -63,7 +63,7 @@ if (shareList.length > 0) {
 });
     </script>
 {#if shouldDisplay}
-    <div class='flex {topOfCommons ? "flex-row" : "flex-col"} {noArtefacts ? "ml-8" : "items-center justify-center mt-2 mb-8"}'>
+    <div class='flex {topOfCommons ? "flex-row" : "flex-col"} {noArtefacts ? "ml-8" : "items-center justify-center mt-0 mb-8"}'>
         <div class='flex {topOfCommons ? "flex-row" : "flex-col"} {noArtefacts ? "" : "items-center justify-center mx-auto"} max-w-4xl w-full'>
             {#if !topOfCommons}
                 <Tooltip text="You can choose from any studio you saved in your settings. Settings can be accessed in the server customization in the top left corner and then under 'workspace settings'.">
@@ -109,7 +109,8 @@ if (shareList.length > 0) {
     {/if}
     <style>
         p {
-            font-size: 1.2rem;
+            font-size: 1.0rem;
+            line-height: 1.1;
         }
         label {
             display: block;

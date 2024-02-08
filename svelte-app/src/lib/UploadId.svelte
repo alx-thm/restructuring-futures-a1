@@ -56,34 +56,3 @@
     <span class="tooltiptext">It is a JSON file</span>
 </button>
 </div>
-<style>
-    button {
-        text-align: center;
-    }
-    .tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: var(--dark-text-red);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  top: 110%; /* Position the tooltip above the button */
-  left: 50%;
-  margin-left: -60px; /* Use half of the width to center the tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-</style>

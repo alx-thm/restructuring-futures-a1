@@ -83,11 +83,11 @@
   }
 
   .container div:hover:not(.occupied) {
-      background: #fff5d9;
+      background: var(--color-lab-6c);
   }
 
   .container div.active {
-    background: #e15f55;
+    background: var(--vivid-red);
   }
 
   .container div.occupied {

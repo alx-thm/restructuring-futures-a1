@@ -15,7 +15,7 @@
 
 * {
   scrollbar-width: auto; /* or thin */
-  scrollbar-color: #B44C44 #FFF5D9; /* thumb and track color */
+  scrollbar-color: var(--color-scroll) var(--color-bg-light); /* thumb and track color */
 }
 
 *::-webkit-scrollbar {
@@ -23,13 +23,13 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #FFF5D9;  /* Scroll bar background */
-  border: 1px solid #71302B;
+  background: var(--color-bg-light);  /* Scroll bar background */
+  border: 1px solid var(--color-border);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #B44C44;  /* Scroll bar thumb color */
-  border: 1px solid #71302B;
+  background-color: var(--color-scroll);  /* Scroll bar thumb color */
+  border: 1px solid var(--color-border);
 }
 
 body {
@@ -91,82 +91,87 @@ body {
   /* can convert to hsl and manage this with % variables if prefered; i put hex because i already have these colours*/
 :root {
   --dark-text-blue: #00495A;
-  --dark-text-red: #71302b;
+  --dark-text-red: #00495A;
   --paper-red: #f9dfdd;
   --soft-red: #ed9f99;
   --vivid-red: #e15f55;
+  --vivid-red: var(--color-lab-4b);
   --paper-blue: #cce9f0;
   --soft-blue: #66bdd2;
   --vivid-blue: #0091b4;
   --paper-green: #f0f6f2;
+  --paper-green: var(--color-lab-3c);
   --soft-green: #d3e3d9;
   --vivid-green: #b5d1c0;
   --paper-yellow: #fff5d9;
+  --paper-yellow: var(--color-lab-1c);
   --soft-yellow: #fee28d;
   --vivid-yellow: #fdcf41;
-}
-
-/*heading font when offline: https://github.com/Interstices-/GapSans; if online, use Citizen OT(adobe font) */
-@font-face {
-  font-family: 'gap_sansregular';
-  src: url('assets/fonts/gapsans-webfont.eot');
-  src: url('assets/fonts/gapsans-webfont.eot?#iefix') format('embedded-opentype'),
-       url('assets/fonts/gapsans-webfont.woff2') format('woff2'),
-       url('assets/fonts/gapsans-webfont.woff') format('woff'),
-       url('assets/fonts/gapsans-webfont.ttf') format('truetype'),
-       url('assets/fonts/gapsans-webfont.svg#gap_sansregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
-@font-face {
-  font-family: 'gap_sansblack';
-  src: url('assets/fonts/gapsansblack-webfont.eot');
-  src: url('assets/fonts/gapsansblack-webfont.eot?#iefix') format('embedded-opentype'),
-       url('assets/fonts/gapsansblack-webfont.woff2') format('woff2'),
-       url('assets/fonts/gapsansblack-webfont.woff') format('woff'),
-       url('assets/fonts/gapsansblack-webfont.ttf') format('truetype'),
-       url('assets/fonts/gapsansblack-webfont.svg#gap_sansblack') format('svg');
-  font-weight: normal;
-  font-style: normal;
-
-}
 
 
+  --color-border: hsl(0, 0%, 50%);
+  --color-border-light: hsl(0, 0%, 75%);
+  /* --color-border: var(--color-lab-3a); */
+  --color-scroll: hsl(0, 0%, 50%);
+  /* --color-scroll: var(--color-lab-3b); */
+  --color-text-dark: hsl(0, 0%, 0%);
+  --color-text-light: hsl(0, 100%, 100%);
+  --color-bg-light: hsl(0, 100%, 100%);
+
+  --color-tooltip-bg: var(--color-lab-4a);
+  --color-tooltip-text: var(--color-text-light);
 
 
-@font-face {
-  font-family: 'gap_sansbold';
-  src: url('assets/fonts/gapsansbold-webfont.eot');
-  src: url('assets/fonts/gapsansbold-webfont.eot?#iefix') format('embedded-opentype'),
-       url('assets/fonts/gapsansbold-webfont.woff2') format('woff2'),
-       url('assets/fonts/gapsansbold-webfont.woff') format('woff'),
-       url('assets/fonts/gapsansbold-webfont.ttf') format('truetype'),
-       url('assets/fonts/gapsansbold-webfont.svg#gap_sansbold') format('svg');
-  font-weight: normal;
-  font-style: normal;
+  --color-lab-1a: hsl(250, 100%, 50%);
+  --color-lab-1b: hsl(250, 100%, 75%);
+  --color-lab-1c: hsl(250, 100%, 95%);
+  --color-lab-2a: hsl(274, 100%, 50%);
+  --color-lab-2b: hsl(274, 100%, 75%);
+  --color-lab-2c: hsl(274, 100%, 95%);
+  --color-lab-3a: hsl(320, 100%, 50%);
+  --color-lab-3b: hsl(320, 100%, 75%);
+  --color-lab-3c: hsl(320, 100%, 95%);
+  --color-lab-4a: hsl(340, 100%, 50%);
+  --color-lab-4b: hsl(340, 100%, 75%);
+  --color-lab-4c: hsl(340, 100%, 95%);
+  --color-lab-5a: hsl(20, 100%, 50%);
+  --color-lab-5b: hsl(20, 100%, 75%);
+  --color-lab-5c: hsl(20, 100%, 95%);
+  --color-lab-6a: hsl(40, 100%, 50%);
+  --color-lab-6b: hsl(40, 100%, 75%);
+  --color-lab-6c: hsl(40, 100%, 95%);
+
+
+  --font-family: "Helvetica Neue", Helvetica, sans-serif;
 
 }
 
+* {
+  /* border-style: inset; */
+}
+
+[type='text'], input:where(:not([type])), [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+  border-color: var(--color-border) !important;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: var(--font-family);
   line-height: 1;
+  text-transform: capitalize;
 }
 
 .bold-heading {
-  font-family: Gap_sansblack, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+  font-family: var(--font-family);
 }
 
 .oblique-heading {
-  font-family: Gap_sansregular, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: var(--font-family);
   font-style: oblique 6deg;
   padding-right: 0.5ch;
 }
-/*Gill Sans when offline, if online use Brandon Grotesque (adobe font)*/
+
 p {
-  font-family: 'brandon-grotesque', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: var(--font-family);
   line-height: 1.5;
   max-width: 72ch;
 }
@@ -198,16 +203,17 @@ small {
 
 button {
   padding: 0.6rem;
-  font-family: Gap_sansregular, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: var(--dark-text-red);
+  font-family: var(--font-family);
+  color: var(--color-text-dark);
   font-size: var(--font-size-base);
-  border: var(--dark-text-red) 1px solid;
+  border: var(--color-border) 1px solid;
   min-width: 6rem;
+  text-transform: capitalize;
 }
 
 button:hover {
 cursor: pointer;
-box-shadow: 0 2px var(--dark-text-red);
+box-shadow: 0 2px var(--color-border);
 transform: translateY(-1px);
 }
 
@@ -216,7 +222,7 @@ transform: translateY(-1px);
 }
 
 .utility:active {
-  box-shadow: 0 1px var(--dark-text-red);
+  box-shadow: 0 1px var(--color-border);
   transform: translateY(1px);
 }
 
@@ -226,7 +232,7 @@ transform: translateY(-1px);
 
 .phase1:active {
   background-color: var(--soft-yellow);
-  box-shadow: 0 1px var(--dark-text-red);
+  box-shadow: 0 1px var(--color-border);
   transform: translateY(1px);
 }
 
@@ -236,7 +242,7 @@ transform: translateY(-1px);
 
 .phase2:active {
   background-color: var(--soft-green);
-  box-shadow: 0 1px var(--dark-text-red);
+  box-shadow: 0 1px var(--color-border);
   transform: translateY(1px);
 }
 
@@ -246,7 +252,7 @@ transform: translateY(-1px);
 
 .phase3:active {
   background-color: var(--soft-red);
-  box-shadow: 0 1px var(--dark-text-red);
+  box-shadow: 0 1px var(--color-border);
   transform: translateY(1px);
 }
 
@@ -256,11 +262,110 @@ transform: translateY(-1px);
 
 .phase4:active {
   background-color: var(--soft-blue);
-  box-shadow: 0 1px var(--dark-text-red);
+  box-shadow: 0 1px var(--color-border);
   transform: translateY(1px);
 }
 
 .paper-yellow {
   background-color: var(--paper-yellow);
+}
+
+::placeholder {
+  color: var(--color-text-dark) !important;
+}
+
+.overlay, .artefact-overlay, .modal {
+  border: 1px solid var(--color-border);
+  box-shadow: 0px 5px 10px -1px rgba(0,0,0,0.3);
+}
+
+.borderstudio {
+  border-color: var(--color-border-light) !important;
+}
+
+
+/* I hate my life */
+
+.mb-2 {
+  margin-bottom: 1rem !important;
+}
+
+.truncate {
+  font-weight: 400 !important;
+}
+
+
+h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+h4 {
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  /* line-height: 1.5; */
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h5 {
+  width: 100% !important;
+}
+h6 {
+  margin-bottom: 1rem;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+h4 .tooltip {
+  text-transform: initial;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 20ch;
+  font-size: var(--font-size-base) !important;
+  line-height: 1.5;
+  background-color: var(--color-tooltip-bg);
+  color: var(--color-tooltip-text);
+  text-align: left;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  z-index: 1000;
+  top: 110%;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 40px;
+  aspect-ratio: 1;
+  border: 20px solid transparent;
+  border-right: 0;
+  border-left: 20px solid var(--color-tooltip-bg);
+}
+
+.tooltip:hover .tooltiptext, .tooltip .tooltiptext.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+.my-grid-container-wrapper {
+  isolation: isolate;
+  z-index: 10;
+}
+
+.side-bar {
+  isolation: isolate;
+  z-index: 20;
 }
 
